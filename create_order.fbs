@@ -1,0 +1,21 @@
+namespace Orders;
+
+enum Exchange:byte {NSE = 0, BSE = 1}
+
+enum OrderType:byte {MIS = 0, CNC = 1}
+
+enum Action:byte {BUY = 0, SELL = 1}
+
+table CreateOrder
+{
+  account_id: uint32;
+  order_id: uint32;
+  exchange: Exchange = NSE; // Enum
+  symbol: string;
+  order_type: OrderType = MIS; // Enum
+  quantity: double;
+  price: double;
+  action: Action; // Enum
+}
+
+root_type CreateOrder; 

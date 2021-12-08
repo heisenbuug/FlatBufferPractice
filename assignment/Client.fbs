@@ -1,0 +1,28 @@
+namespace Client;
+
+enum Gender:byte {Female = 0, Male = 1}
+
+table Person
+{
+  name: string;
+  age: short;
+  weight: double;
+  gender: Gender; // Enum
+}
+
+table Group
+{
+  group_name: string;
+  average_age: double;
+  average_weight: double;
+  names: [string];
+}
+
+union Foo {Person, Group}
+
+table Data
+{
+  data: Foo;
+}
+
+root_type Data;

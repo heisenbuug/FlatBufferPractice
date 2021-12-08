@@ -12,12 +12,17 @@ The directory contains files to create a binary file using [`flatbuffers`](http:
 
 ## Steps to execute the code
 * Use the flatbuffer compiler to compile the schema
+
     `flatc --cpp Client.fbs`
+    
     `flatc --python Client.fbs`
 * Run the `fb_encode.cpp` file, don't forget to include the path of flatbuffers header file.
+
     `g++ -I/flatbuffers/include fb_encoder.cpp`
+    
     `./a.out`
 * After running the above two commands, you can see a new `fb_bytes.bin` in same directory. This is the file which contains your binary data.
 * Assuming that you have activated your `venv` run `fb_decode.py`
+
     `python fb_decode.py`
 * Output is on your screen.
